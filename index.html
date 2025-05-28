@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manattiparambu - A Beautiful Village in Kerala</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5530, #4a7c59);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a8d8a8;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+
+        .hero-slider {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide1 { background-image:url(https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80); }
+        .slide2 { background-image:url(https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80); }
+        .slide3 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ffd700" width="1200" height="200"/><rect fill="%23ff8c00" width="1200" height="200" y="200"/><rect fill="%23ff6347" width="1200" height="200" y="400"/><rect fill="%23dc143c" width="1200" height="200" y="600"/><circle fill="%23ffff00" cx="600" cy="400" r="150"/><rect fill="%23228b22" x="300" y="600" width="40" height="100"/><rect fill="%23228b22" x="800" y="580" width="30" height="120"/></svg>'); }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #4a7c59, #2c5530);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5530;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #4a7c59, #2c5530);
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .map-container {
+            background: #e9ecef;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            
+        }
+
+        /* Highlights Section */
+      body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .highlights {
+      padding: 50px 20px;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .highlights-grid a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .highlight-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .highlight-icon {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .highlight-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #222;
+    }
+
+    .highlight-card p {
+      margin: 0;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+        /* Gallery Section */
+        .gallery {
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Business Section */
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .business-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #4a7c59;
+        }
+
+        .business-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+        }
+
+        .business-type {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .business-contact {
+            color: #4a7c59;
+            font-weight: bold;
+        }
+
+        /* People Section */
+        .people {
+            background: #f8f9fa;
+        }
+
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .person-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .person-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #4a7c59, #2c5530);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .person-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 0.5rem;
+        }
+
+        .person-role {
+            color: #666;
+        }
+
+        /* Facilities Section */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .facility-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .facility-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 1rem;
+        }
+
+        .facility-info {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tourist Guide Section */
+        .tourist-guide {
+            background: #f8f9fa;
+        }
+
+        .guide-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .guide-section h3 {
+            color: #2c5530;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c5530;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a7c59;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #4a7c59, #2c5530);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c5530, #4a7c59);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Manattiparambu</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#businesses">Businesses</a></li>
+                <li><a href="#people">People</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#guide">Visit</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide slide1 active"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Manattiparambu</h1>
+            <p class="hero-subtitle">Discover the beauty and warmth of our traditional Kerala village</p>
+            <a href="#about" class="cta-button">Explore Our Village</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Manattiparambu</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Manattiparambu is a picturesque village nestled in the heart of Kerala, India. The name "Manattiparambu" derives from the Malayalam words "Manatti" (earthen pot) and "Parambu" (field), reflecting the village's rich tradition of pottery and agriculture.</p>
+                    
+                    <p>With a population of approximately 5,000 residents, our village is a harmonious blend of traditional Kerala culture and modern development. The community is known for its warm hospitality, rich cultural heritage, and strong sense of unity.</p>
+                    
+                    <p>Our village has a history spanning over 200 years, with generations of families preserving the age-old traditions of Kerala while embracing progress and education. The lush green landscapes, coconut groves, and paddy fields create a serene environment that embodies the essence of rural Kerala.</p>
+                    
+                    <p>Manattiparambu is home to people from various faiths who live together in perfect harmony, celebrating festivals and traditions collectively, making it a true example of India's cultural diversity and unity.</p>
+                </div>
+                <div class="map-container">
+                   
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d393.29200039084793!2d75.96639510486652!3d11.044335285308623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64ced09a69773%3A0x6ac24b57d90d6408!2sManatti%2C%20Vengara%20-%20Muthalamada%20Rd%2C%20Valiyora%2C%20Kerala%20676304!5e0!3m2!1sen!2sin!4v1747286392847!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Village Highlights -->
+    <section id="highlights" class="highlights">
+        <div class="container">
+            <h2 class="section-title">Village Highlights</h2>
+            <div class="highlights-grid">
+                <a href="https://maps.app.goo.gl/yLb4dscgde9Gm3Us7">
+                <div class="highlight-card">
+                    
+                    <div class="highlight-icon">🏛️</div>
+                    <h3>Ancient Temple</h3>
+                    <p>The 300-year-old Devi Temple is the spiritual heart of our village, known for its beautiful architecture and annual festivals.</p>
+                </div>
+                </a>
+                <a href="https://maps.app.goo.gl/Z7KSoRMgibg2A1F5A">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🕌</div>
+                    <h3>Peaceful Mosque</h3>
+                    <p>Our village mosque serves the Muslim community and stands as a symbol of religious harmony and architectural beauty.</p>
+                </div>
+                </a>
+                <a href="">
+                <div class="highlight-card">
+                    <div class="highlight-icon">⛪</div>
+                    <h3>Historic Church</h3>
+                    <p>The century-old church is a testament to our village's diverse religious heritage and Gothic architectural influence.</p>
+                </div>
+                </a>
+                <a href="">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌊</div>
+                    <h3>Serene River</h3>
+                    <p>The crystal-clear river flowing through our village provides fresh water and serves as a peaceful retreat for residents.</p>
+                </div>
+                </a>
+                <a href="">
+                <div class="highlight-card">
+                    <div class="highlight-icon">⛰️</div>
+                    <h3>Scenic Hills</h3>
+                    <p>The rolling hills surrounding Manattiparambu offer breathtaking views and are perfect for nature walks and hiking.</p>
+                </div>
+                </a>
+                <a href="">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌾</div>
+                    <h3>Paddy Fields</h3>
+                    <p>Vast green paddy fields showcase our agricultural heritage and provide the staple food for our community.</p>
+                </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Photo & Video Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">🎉 Festival Celebrations</div>
+                <div class="gallery-item">🌅 Village Sunrise</div>
+                <div class="gallery-item">🎭 Cultural Events</div>
+                <div class="gallery-item">🏡 Traditional Homes</div>
+                <div class="gallery-item">🌴 Coconut Groves</div>
+                <div class="gallery-item">🎪 Annual Fair</div>
+                <div class="gallery-item">📹 Documentary Videos</div>
+                <div class="gallery-item">🌸 Seasonal Beauty</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Businesses -->
+    <section id="businesses" class="businesses">
+        <div class="container">
+            <h2 class="section-title">Local Businesses & Services</h2>
+            <div class="business-grid">
+                <div class="business-card">
+                    <div class="business-name">Ravi's Tea Shop</div>
+                    <div class="business-type">Tea & Snacks</div>
+                    <div class="business-contact">📞 +91 98765 43210</div>
+                </div>
+                <div class="business-card">
+                    <div class="business-name">Padmini Tailoring</div>
+                    <div class="business-type">Tailoring Services</div>
+                    <div class="business-contact">📞 +91 98765 43211</div>
+                </div>
+                <div class="business-card">
+                    <div class="business-name">Kumar Auto Repair</div>
+                    <div class="business-type">Vehicle Services</div>
+                    <div class="business-contact">📞 +91 98765 43212</div>
+                </div>
+                <div class="business-card">
+                    <div class="business-name">Village Grocery Store</div>
+                    <div class="business-type">General Store</div>
+                    <div class="business-contact">📞 +91 98765 43213</div>
+                </div>
+                <div class="business-card">
+                    <div class="business-name">Organic Vegetable Farm</div>
+                    <div class="business-type">Agriculture</div>
+                    <div class="business-contact">📞 +91 98765 43214</div>
+                </div>
+                <div class="business-card">
+                    <div class="business-name">Traditional Restaurant</div>
+                    <div class="business-type">Kerala Cuisine</div>
+                    <div class="business-contact">📞 +91 98765 43215</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notable People -->
+    <section id="people" class="people">
+        <div class="container">
+            <h2 class="section-title">Notable People</h2>
+            <div class="people-grid">
+                <div class="person-card">
+                    <div class="person-avatar">👨‍🏫</div>
+                    <div class="person-name">Prof. Krishnan Nair</div>
+                    <div class="person-role">Retired Teacher & Education Reformer</div>
+                </div>
+                <div class="person-card">
+                    <div class="person-avatar">👩‍🎨</div>
+                    <div class="person-name">Latha Menon</div>
+                    <div class="person-role">Renowned Kathakali Artist</div>
+                </div>
+                <div class="person-card">
+                    <div class="person-avatar">👨‍💼</div>
+                    <div class="person-name">Dr. Rajesh Kumar</div>
+                    <div class="person-role">NRI Philanthropist (UAE)</div>
+                </div>
+                <div class="person-card">
+                    <div class="person-avatar">👩‍⚕️</div>
+                    <div class="person-name">Dr. Priya Nair</div>
+                    <div class="person-role">Community Health Worker</div>
+                </div>
+                <div class="person-card">
+                    <div class="person-avatar">👨‍🌾</div>
+                    <div class="person-name">Suresh Pillai</div>
+                    <div class="person-role">Organic Farming Pioneer</div>
+                </div>
+                <div class="person-card">
+                    <div class="person-avatar">👩‍💼</div>
+                    <div class="person-name">Meera Raj</div>
+                    <div class="person-role">Women's Self-Help Group Leader</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Facilities -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2 class="section-title">Local Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-name">🏫 Manattiparambu Primary School</div>
+                    <div class="facility-info"><strong>Hours:</strong> 9:00 AM - 4:00 PM</div>
+                    <div class="facility-info"><strong>Contact:</strong> +91 98765 43220</div>
+                    <div class="facility-info"><strong>Principal:</strong> Mrs. Usha Nair</div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-name">🏥 Village Health Center</div>
+                    <div class="facility-info"><strong>Hours:</strong> 8:00 AM - 6:00 PM</div>
+                    <div class="facility-info"><strong>Emergency:</strong> 24/7</div>
+                    <div class="facility-info"><strong>Contact:</strong> +91 98765 43221</div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-name">🏛️ Post Office</div>
+                    <div class="facility-info"><strong>Hours:</strong> 9:00 AM - 5:00 PM</div>
+                    <div class="facility-info"><strong>Closed:</strong> Sundays & Holidays</div>
+                    <div class="facility-info"><strong>Postal Code:</strong> 682XXX</div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-name">🏪 Cooperative Bank</div>
+                    <div class="facility-info"><strong>Hours:</strong> 10:00 AM - 4:00 PM</div>
+                    <div class="facility-info"><strong>Closed:</strong> Sundays</div>
+                    <div class="facility-info"><strong>ATM:</strong> 24/7 Available</div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-name">📚 Community Library</div>
+                    <div class="facility-info"><strong>Hours:</strong> 9:00 AM - 7:00 PM</div>
+                    <div class="facility-info"><strong>Books:</strong> 5000+ Collection</div>
+                    <div class="facility-info"><strong>Free Membership</strong></div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-name">⚡ Electricity Board Office</div>
+                    <div class="facility-info"><strong>Hours:</strong> 9:00 AM - 5:00 PM</div>
+                    <div class="facility-info"><strong>Emergency:</strong> +91 98765 43225</div>
+                    <div class="facility-info"><strong>Bill Payment Available</strong></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tourist Guide -->
+    <section id="guide" class="tourist-guide">
+        <div class="container">
+            <h2 class="section-title">Visitor's Guide</h2>
+            <div class="guide-content">
+                <div class="guide-section">
+                    <h3>🚗 How to Reach</h3>
+                    <p><strong>Nearest Airport:</strong> Cochin International Airport (45 km)</p>
+                    <p><strong>Nearest Railway:</strong> Thrissur Railway Station (25 km)</p>
+                    <p><strong>By Road:</strong> Well connected by state highways</p>
+                    <p><strong>Local Transport:</strong> Auto-rickshaws and buses available</p>
+                </div>
+                <div class="guide-section">
+                    <h3>🌤️ Best Time to Visit</h3>
+                    <p><strong>Winter:</strong> October to February (Pleasant weather)</p>
+                    <p><strong>Monsoon:</strong> June to September (Lush greenery)</p>
+                    <p><strong>Festivals:</strong> Onam (August/September), Vishu (April)</p>
+                    <p><strong>Avoid:</strong> Peak summer months (March-May)</p>
+                </div>
+                <div class="guide-section">
+                    <h3>🏨 Accommodation</h3>
+                    <p><strong>Village Homestays:</strong> Experience local lifestyle</p>
+                    <p><strong>Nearby Hotels:</strong> Budget and luxury options in Thrissur</p>
+                    <p><strong>Guest Houses:</strong> Community-run accommodations</p>
+                    <p><strong>Booking:</strong> Contact village office for arrangements</p>
+                </div>
+                <div class="guide-section">
+                    <h3>🍽️ Local Cuisine</h3>
+                    <p><strong>Traditional Meals:</strong> Served on banana leaves</p>
+                    <p><strong>Specialties:</strong> Fish curry, appam, puttu, payasam</p>
+                    <p><strong>Vegetarian Options:</strong> Widely available</p>
+                    <p><strong>Fresh Ingredients:</strong> Organic vegetables and spices</p>
+                </div>
+                <div class="guide-section">
+                    <h3>📱 Local Customs</h3>
+                    <p><strong>Greeting:</strong> "Namaste" or "Vanakkam"</p>
+                    <p><strong>Dress Code:</strong> Modest clothing recommended</p>
+                    <p><strong>Temple Visits:</strong> Remove shoes, respect traditions</p>
+                    <p><strong>Photography:</strong> Ask permission for personal photos</p>
+                </div>
+                <div class="guide-section">
+                    <h3>🗺️ Nearby Attractions</h3>
+                    <p><strong>Thrissur Pooram:</strong> Famous temple festival (30 km)</p>
+                    <p><strong>Athirapally Falls:</strong> Kerala's Niagara (40 km)</p>
+                    <p><strong>Cherai Beach:</strong> Beautiful coastline (35 km)</p>
+                    <p><strong>Guruvayur Temple:</strong> Sacred pilgrimage site (20 km)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact & Visit Info</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <h4>📍 Village Office</h4>
+                        <p>Manattiparambu Village Office<br>
+                        Thrissur District, Kerala 682XXX<br>
+                        India</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📞 Contact Numbers</h4>
+                        <p>Village Secretary: +91 98765 43230<br>
+                        Panchayat Office: +91 98765 43231<br>
+                        Emergency: 100 (Police), 108 (Ambulance)</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>✉️ Email</h4>
+                        <p>info@manattiparambu.org<br>
+                        panchayat@manattiparambu.gov.in</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>🗺️ Location Map</h4>
+                        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center; color: #666; font-style: italic;">
+                            Interactive Google Map<br>
+                            (Integration required)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Manattiparambu Village. All rights reserved.</p>
+            <p>Preserving tradition, embracing progress</p>
+            <div class="social-links">
+               
+                <a href="https://www.instagram.com/an__as_cp?igsh=NDRsdXpnaGhtMXhh" title="Instagram"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M16.5 7.5v.01" /></svg></a>
+                <a href="#" title="YouTube"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" /><path d="M10 9l5 3l-5 3z" /></svg></a>
+                <a href="wa.me917902450964" title="WhatsApp"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                Built with ❤️ for our beloved village community
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Image Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slides[currentSlide].classList.add('active');
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(showNextSlide, 5000);
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple form validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(74, 124, 89, 0.95))';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add animation to cards when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.highlight-card, .business-card, .person-card, .facility-card, .guide-section').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Add loading animation for gallery items
+        document.querySelectorAll('.gallery-item').forEach((item, index) => {
+            item.style.animationDelay = `${index * 0.1}s`;
+            item.style.animation = 'fadeInUp 0.6s ease forwards';
+        });
+
+        // Add CSS animation for gallery
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Mobile menu toggle (basic implementation)
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Add mobile menu button for smaller screens
+        if (window.innerWidth <= 768) {
+            const nav = document.querySelector('nav');
+            const menuButton = document.createElement('button');
+            menuButton.innerHTML = '☰';
+            menuButton.style.cssText = `
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                display: block;
+            `;
+            menuButton.onclick = toggleMobileMenu;
+            nav.appendChild(menuButton);
+        }
+
+        // Add some interactivity to business cards
+        document.querySelectorAll('.business-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 3px 10px rgba(0,0,0,0.1)';
+            });
+        });
+
+        // Add click-to-call functionality for phone numbers
+        document.querySelectorAll('.business-contact, .facility-info').forEach(element => {
+            if (element.textContent.includes('+91')) {
+                element.style.cursor = 'pointer';
+                element.addEventListener('click', function() {
+                    const phoneNumber = this.textContent.replace('📞 ', '').trim();
+                    window.location.href = `tel:${phoneNumber}`;
+                });
+            }
+        });
+
+        // Add a simple counter animation for statistics (can be expanded)
+        function animateCounters() {
+            const counters = [
+                { element: document.querySelector('.about-text p'), value: 5000, suffix: ' residents' },
+                { element: document.querySelector('.about-text p:nth-child(3)'), value: 200, suffix: ' years of history' }
+            ];
+            
+            // This is a placeholder for counter animation
+            // In a real implementation, you would animate numbers counting up
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Manattiparambu Village Website Loaded Successfully!');
+            
+            // Add a welcome message after a short delay
+            setTimeout(() => {
+                console.log('Welcome to Manattiparambu - where tradition meets progress!');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
